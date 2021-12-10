@@ -1,13 +1,8 @@
 const Koa = require('koa');
-const Router = require('koa-router');
 const koaBody = require('koa-body');
 
 const app = new Koa();
-const router = new Router({
-    prefix: '/api'
-});
 app.use(koaBody());
-
 
 router.get('/', async (ctx) => {
     ctx.body = "hello";
@@ -28,7 +23,7 @@ router.get('/user', async (ctx) => {
 router.get('/login', async (ctx) => {
     ctx.body = `
     <form method="POST" action="/api/login">
-        <p>UserName</p>
+        <label>UserName</label>
         <input name="user" /><br/>
         <button type="submit">submit</button>
     </form>
